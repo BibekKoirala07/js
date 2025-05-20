@@ -13,11 +13,11 @@
 
 .container {
   background-color: aliceblue;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #container-main {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #start-screen {

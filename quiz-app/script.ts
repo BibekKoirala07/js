@@ -23,21 +23,18 @@ function displayQuiz() {
     console.log("data", data);
     if (containerMain) {
       containerMain.innerHTML = `
-      <div>
+      <div id="questions">
         ${data.results.map((each: any, index: number) => {
           return `
-          <div>
-            <div>
+          <div id="each-question-">
+            <div id="each-question-heading">
               <h1>${each.question}</h1>
             </div>
-            <div>
-            <button>${each.incorrect_answers[0]}</button> 
-            <button>${each.incorrect_answers[1]}</button> 
-
-            <button>${each.incorrect_answers[2]}</button> 
-            <button>${each.correct_answer}</button> 
-
-
+            <div id="each-question-btns">
+              <button>${each.incorrect_answers[0]}</button> 
+              <button>${each.incorrect_answers[1]}</button> 
+              <button>${each.incorrect_answers[2]}</button> 
+              <button>${each.correct_answer}</button> 
             </div>       
           </div>
             `;
