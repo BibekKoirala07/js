@@ -1,6 +1,5 @@
-const containerMain = document.getElementById("container-main");
-
-console.log("containerMain", containerMain);
+const containerMain: HTMLElement | null =
+  document.getElementById("container-main");
 
 const url = "";
 
@@ -10,4 +9,31 @@ async function getQuestions() {
   return data;
 }
 
-async function displayQuiz() {}
+async function displayQuiz() {
+  if (containerMain) {
+    containerMain.innerHTML = "";
+  }
+}
+
+function displayFirstScreen() {
+  if (containerMain) {
+    containerMain.innerHTML = `
+    <div id="start-screen">
+      <div id="start-screen-inner">
+        <h1 id="start-screen-inner-heading">Quizzical</h1>
+        <p id="start-screen-inner-description">play our quiz to get prizes</p>
+        <div id="start-screen-inner-button">
+          <button id="start-screen-inner-btn">Start quiz</button>
+        </div>
+      </div>
+
+    </div>
+    `;
+  }
+}
+
+function displayScreen() {
+  displayFirstScreen();
+}
+
+displayScreen();
