@@ -35,7 +35,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var containerMain = document.getElementById("container-main");
-console.log("containerMain", containerMain);
 var url = "";
 function getQuestions() {
     return __awaiter(this, void 0, void 0, function () {
@@ -54,9 +53,14 @@ function getQuestions() {
     });
 }
 function displayQuiz() {
-    return __awaiter(this, void 0, void 0, function () { return __generator(this, function (_a) {
-        return [2 /*return*/];
-    }); });
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            if (containerMain) {
+                containerMain.innerHTML = "";
+            }
+            return [2 /*return*/];
+        });
+    });
 }
 function displayFirstScreen() {
     if (containerMain) {

@@ -1,5 +1,9 @@
+type screens = "first" | "second" | "third";
+
 const containerMain: HTMLElement | null =
   document.getElementById("container-main");
+
+let currentScreen: screens = "first";
 
 const url = "";
 
@@ -10,6 +14,7 @@ async function getQuestions() {
 }
 
 async function displayQuiz() {
+  const data = await getQuestions();
   if (containerMain) {
     containerMain.innerHTML = "";
   }

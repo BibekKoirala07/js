@@ -1,0 +1,130 @@
+1. Basics
+✅ What is TypeScript?
+
+✅ Setting up TypeScript (tsc, tsconfig.json)
+
+✅ Compilation vs. Transpilation
+
+✅ Type annotation vs. type inference
+
+✅ strict mode and what it enforces
+
+🔤 2. Types
+✅ Primitive types: string, number, boolean, null, undefined
+
+✅ Literal types: "yes", 42, true
+
+✅ Any, unknown, never, void
+
+✅ Arrays: string[], Array<number>
+
+✅ Tuples: [string, number]
+
+✅ Enums
+
+👤 3. Objects & Type Aliases
+✅ Type aliases: type User = { name: string; }
+
+✅ Optional properties: ?
+
+✅ Readonly properties
+
+✅ Nested types
+
+📦 4. Interfaces
+✅ Creating interfaces
+
+✅ Extending interfaces
+
+✅ Interface vs type alias
+
+✅ Merging interfaces
+
+🧠 5. Functions
+✅ Parameter & return types
+
+✅ Optional/default parameters
+
+✅ Function types
+
+✅ Arrow functions
+
+✅ Rest parameters
+
+✅ Function overloading
+
+🔁 6. Unions & Intersections
+✅ Union types: string | number
+
+✅ Intersection types: A & B
+
+✅ Type guards (e.g., typeof, in, instanceof)
+
+✅ Discriminated unions
+
+🧰 7. Generics
+✅ Generic functions: <T>(arg: T) => T
+
+✅ Generic constraints: <T extends Something>
+
+✅ Generic interfaces/classes
+
+📚 8. Advanced Types
+✅ Indexed access types: T[K]
+
+✅ Keyof, typeof
+
+✅ Conditional types: T extends U ? X : Y
+
+✅ Mapped types
+
+✅ Utility types: Partial<T>, Pick<T>, Record<K,V>, Omit<T>
+
+🏗️ 9. Classes & OOP
+✅ Class types
+
+✅ Constructors & access modifiers (public, private, protected, readonly)
+
+✅ Implementing interfaces
+
+✅ Inheritance
+
+⚙️ 10. Modules & Namespaces
+✅ import / export
+
+✅ Ambient declarations (.d.ts)
+
+✅ Using JS/TS libraries with types
+
+🛠️ 11. Tooling & Ecosystem
+✅ tsconfig.json deep dive
+
+✅ Using TypeScript with:
+
+React
+
+Node.js
+
+Express
+
+Webpack/Vite
+
+✅ Type checking with ESLint
+
+📦 12. Working with Third-party Types
+✅ @types packages (e.g., @types/lodash)
+
+✅ Writing your own .d.ts type declarations
+
+✅ Handling any when no types exist
+
+📝 Bonus: Real-World Skills
+✅ Converting a JS codebase to TS
+
+✅ Creating reusable type-safe functions/components
+
+✅ Structuring TS projects
+
+✅ API response typing (e.g., with fetch)
+
+✅ Handling nullable data safely
