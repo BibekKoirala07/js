@@ -5,19 +5,47 @@ const containerMain: HTMLElement | null =
 
 let currentScreen: screens = "first";
 
+console.log("containerMain", containerMain);
+
 const url = "";
 
 async function getQuestions() {
-  const response = await fetch("");
+  const response = await fetch("https://opentdb.com/api.php?amount=10");
   const data = await response.json();
   return data;
 }
 
-async function displayQuiz() {
-  const data = await getQuestions();
+function displayQuiz() {
   if (containerMain) {
     containerMain.innerHTML = "";
   }
+  getQuestions().then((data) => {
+    console.log("data", data);
+    if (containerMain) {
+      containerMain.innerHTML = `
+      <div>
+        ${data.results.map((each: any, index: number) => {
+          return `
+          <div>
+            <div>
+              <h1>${each.question}</h1>
+            </div>
+            <div>
+            <button>${each.incorrect_answers[0]}</button> 
+            <button>${each.incorrect_answers[1]}</button> 
+
+            <button>${each.incorrect_answers[2]}</button> 
+            <button>${each.correct_answer}</button> 
+
+
+            </div>       
+          </div>
+            `;
+        })}
+      </div>
+      `;
+    }
+  });
 }
 
 function displayFirstScreen() {
@@ -35,10 +63,24 @@ function displayFirstScreen() {
     </div>
     `;
   }
+
+  const startBtn = document.getElementById("start-screen-inner-btn");
+
+  console.log("startBtn", startBtn);
+
+  startBtn?.addEventListener("click", () => {
+    currentScreen = "second";
+
+    displayScreen();
+  });
 }
 
 function displayScreen() {
-  displayFirstScreen();
+  if (currentScreen == "first") {
+    displayFirstScreen();
+  } else if (currentScreen == "second") {
+    displayQuiz();
+  }
 }
 
 displayScreen();

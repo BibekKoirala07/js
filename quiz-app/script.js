@@ -35,13 +35,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var containerMain = document.getElementById("container-main");
+var currentScreen = "first";
+console.log("containerMain", containerMain);
 var url = "";
 function getQuestions() {
     return __awaiter(this, void 0, void 0, function () {
         var response, data;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, fetch("")];
+                case 0: return [4 /*yield*/, fetch("https://opentdb.com/api.php?amount=10")];
                 case 1:
                     response = _a.sent();
                     return [4 /*yield*/, response.json()];
@@ -53,21 +55,35 @@ function getQuestions() {
     });
 }
 function displayQuiz() {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            if (containerMain) {
-                containerMain.innerHTML = "";
-            }
-            return [2 /*return*/];
-        });
+    if (containerMain) {
+        containerMain.innerHTML = "";
+    }
+    getQuestions().then(function (data) {
+        console.log("data", data);
+        if (containerMain) {
+            containerMain.innerHTML = "\n      <div>\n        ".concat(data.results.map(function (each, index) {
+                return "\n          <div>\n            <div>\n              <h1>".concat(each.question, "</h1>\n            </div>\n            <div>\n            <button>").concat(each.incorrect_answers[0], "</button> \n            <button>").concat(each.incorrect_answers[1], "</button> \n\n            <button>").concat(each.incorrect_answers[2], "</button> \n            <button>").concat(each.correct_answer, "</button> \n\n\n            </div>       \n          </div>\n            ");
+            }), "\n      </div>\n      ");
+        }
     });
 }
 function displayFirstScreen() {
     if (containerMain) {
         containerMain.innerHTML = "\n    <div id=\"start-screen\">\n      <div id=\"start-screen-inner\">\n        <h1 id=\"start-screen-inner-heading\">Quizzical</h1>\n        <p id=\"start-screen-inner-description\">play our quiz to get prizes</p>\n        <div id=\"start-screen-inner-button\">\n          <button id=\"start-screen-inner-btn\">Start quiz</button>\n        </div>\n      </div>\n\n    </div>\n    ";
     }
+    var startBtn = document.getElementById("start-screen-inner-btn");
+    console.log("startBtn", startBtn);
+    startBtn === null || startBtn === void 0 ? void 0 : startBtn.addEventListener("click", function () {
+        currentScreen = "second";
+        displayScreen();
+    });
 }
 function displayScreen() {
-    displayFirstScreen();
+    if (currentScreen == "first") {
+        displayFirstScreen();
+    }
+    else if (currentScreen == "second") {
+        displayQuiz();
+    }
 }
 displayScreen();
