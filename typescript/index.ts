@@ -15,4 +15,46 @@ color.push(23); // however they can be pushed, to prevent this we can use as con
 // you can make one members optional also. Generally Good tips is make types readonly
 type ApiResponse = [status: number, code: string]; // you can see it we can have named tuples also
 
-// Arrays - there are two syntax. One is Generic like and another is normal one(used more)
+// Arrays - there are two syntax. One is Generic style like and another is normal one(used more)
+
+// enum - is the special class that has group constants. comes in two flavors string and numeric()
+enum directions {
+  right,
+  left,
+  up,
+  down,
+}
+
+let hamroDirections = directions.down;
+console.log("hamroDicretion", hamroDirections);
+
+console.log("directions", directions);
+
+enum StatusCode {
+  NotFound = 404,
+  Success = 200,
+  Accepted = 202,
+  BadRequest = 400,
+}
+
+console.log("StatusCode", StatusCode.Accepted);
+
+//  So you can mix string and number but don't do it
+
+// Type Aliases and Interfaces
+// Interface can only apply to object amd they can extend
+interface Line {
+  width: number;
+}
+
+interface Reactangle extends Line {
+  height: number;
+}
+
+// Union
+// It is just union that is it
+
+// Type Casting
+// used with as keywords
+
+// Things should be converted to unknown before typecasting

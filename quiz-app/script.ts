@@ -1,11 +1,13 @@
 type screens = "first" | "second" | "third";
 
-const containerMain: HTMLElement | null =
-  document.getElementById("container-main");
+const containerMain = <HTMLDivElement>document.getElementById("container-main");
 
 let currentScreen: screens = "first";
+const firstScreen = <HTMLDivElement>document.getElementById("first-screen-div");
+containerMain?.append(firstScreen);
 
-console.log("containerMain", containerMain);
+console.log("firstScreen", firstScreen);
+console.log("conatinerMain", containerMain);
 
 const url = "";
 
@@ -48,15 +50,14 @@ function displayQuiz() {
 function displayFirstScreen() {
   if (containerMain) {
     containerMain.innerHTML = `
-    <div id="start-screen">
-      <div id="start-screen-inner">
-        <h1 id="start-screen-inner-heading">Quizzical</h1>
-        <p id="start-screen-inner-description">play our quiz to get prizes</p>
-        <div id="start-screen-inner-button">
+    <div id="h-screen flex items-center bg-red-500">
+      <div id="text-center">
+        <h1 id="text-2xl">Quizzical</h1>
+        <p id="">play our quiz to get prizes</p>
+        <div id="">
           <button id="start-screen-inner-btn">Start quiz</button>
         </div>
       </div>
-
     </div>
     `;
   }

@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<head lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz App</title>
 
-  <link rel="stylesheet" href="./styles.css" />
-  <body>
-    <div class="container">
-      <div id="container-main"></div>
+  <!-- <link rel="stylesheet" href="./styles.css" /> -->
+  <body class="bg-gray-200">
+    <div class="container w-full min-h-screen">
+      <div id="container-main">
+        <template id="first-screen">
+          <div
+            class="h-screen flex items-center bg-red-500"
+            id="first-screen-div"
+          >
+            <div class="text-center">
+              <h1 class="text-2xl">Quizzicald</h1>
+              <p class="">play our quiz to get prizes</p>
+              <div class="">
+                <button id="start-screen-inner-btn">Start quiz</button>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
     </div>
     <script type="module" src="./script.js"></script>
   </body>
