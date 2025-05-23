@@ -88,3 +88,4 @@ const myRect = new Rectangle(10, 20);
 console.log(myRect.getArea());
 
 // Generics
+// tasks r job is to create a function generic function that takes 1st args as the object the second as the key but the key should exist in the object itself if invalid key is passed as an args to the func ts should throw compile time error
